@@ -119,26 +119,33 @@ class Todos extends Controller {
         $this->loadView("Menu.php");
     }
 
-    // Method untuk halaman Kurangi Emisi
-    function kurangiEmisi() {
-        $this->loadView("kurangiEmisi.php");
-    }
 
-    // Method untuk halaman Leaderboard
     function leaderboard() {
-        // Contoh: Mengambil data leaderboard dari model
-        $carbonModel = $this->loadModel('CarbonModel');
-        // Anda perlu menambahkan fungsi di CarbonModel untuk mendapatkan data leaderboard
-        // $leaderboardData = $carbonModel->getLeaderboardData();
-        // $this->loadView("Leaderboard.php", ['leaderboardData' => $leaderboardData]);
-        $this->loadView("Leaderboard.php");
+        $model = $this->loadModel('TodoModel');
+        $data = $model->getLeaderboard();
+        $this->loadView('leaderboard.php', ['leaderboard' => $data]);
     }
 
-    // Method untuk halaman Riwayat Emisi
     function riwayatEmisi() {
-        $carbonModel = $this->loadModel('CarbonModel');
-        $userId = 1; // Ganti dengan ID pengguna yang sebenarnya
-        $records = $carbonModel->getCarbonRecordsByUserId($userId);
-        $this->loadView("riwayatEmisi.php", ['records' => $records]);
+        $model = $this->loadModel('TodoModel');
+        $data = $model->getriwayatEmisi();
+        $this->loadView('riwayatEmisi.php', ['carbon_records' => $data]);
+    }
+
+    function kurangiEmisi() {
+        $model = $this->loadModel('TodoModel');
+        $userId = $_SESSION['user_id'] ?? 1;
+        $totalEmission = $model->getTotalEmissionForUserId($userId);
+        $this->loadView('kurangiEmisi.php', ['total_emission' => $totalEmission]);
+    }
+    
+    public function hapusEmisi() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
+            $delete_id = intval($_POST['delete_id']);
+            $model = $this->loadModel('TodoModel');
+            $model->hapusEmisiById($delete_id);
+        }
+        header("Location: index.php?c=Todos&m=riwayatEmisi");
+        exit;
     }
 }
