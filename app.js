@@ -51,7 +51,6 @@ const getFoods = async (req,res) =>{
 }
 
 router.get("/", (req,res) =>{
-    console.log("masuk fungsi ini king")
     res.status(200).send("Wohoooo");
 })
 

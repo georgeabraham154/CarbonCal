@@ -1,6 +1,6 @@
 <?php
 
-$controller = $_GET['c']?? 'Home';
+$controller = $_GET['c']?? 'Calories';
 $method     = $_GET['m']?? 'index';
 
 require_once "controller/Controller.class.php";

@@ -7,8 +7,8 @@ class Model {
         // Detail koneksi database
         $hostname = 'localhost';
         $username = 'root';
-        $password = '';
-        $dbname = 'carboncal_db'; // Nama database default
+        $password = 'root';
+        $dbname = 'carboncal'; // Nama database lokal saya (dody)
 
         // Membuat koneksi MySQLi
         $this->db = new mysqli($hostname,
