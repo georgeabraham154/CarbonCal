@@ -9,6 +9,13 @@
             font-family: 'Inter', sans-serif;
             background-color: #f0f2f5;
         }
+        footer {
+            background-color: #1a4d2e !important;
+            color: #e6ffe6;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9em;
+        }
         .navbar {
             background-color: #1a4d2e !important;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);

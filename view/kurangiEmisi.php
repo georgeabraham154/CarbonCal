@@ -44,6 +44,13 @@
     .text-green {
         color: #28a745 ;
     }
+
+    footer {
+            background-color: #1a4d2e !important;
+            color: #e6ffe6;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9em;}
   </style>
 </head>
 
@@ -136,7 +143,7 @@
       const target = parseFloat(document.getElementById("targetInput").value);
       localStorage.setItem("targetEmisi", target);
 
-      if (target < currentEmission) {
+      if (target > currentEmission) {
         new bootstrap.Modal(document.getElementById("successModal")).show();
       } else {
         new bootstrap.Modal(document.getElementById("failedModal")).show();

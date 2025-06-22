@@ -129,7 +129,7 @@ class Todos extends Controller {
     function riwayatEmisi() {
         $model = $this->loadModel('TodoModel');
         $data = $model->getriwayatEmisi();
-        $this->loadView('riwayatEmisi.php', ['carbon_records' => $data]);
+        $this->loadView('riwayatEmisi Copy.php', ['carbon_records' => $data]);
     }
 
     function kurangiEmisi() {

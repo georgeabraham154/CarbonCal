@@ -235,7 +235,7 @@
       </div>
 
       <div class="text-center mt-5">
-      <button class="btn btn-primary" onclick="window.location.href='index.php?c=Todos&m=form'">
+      <button class="btn btn-primary" onclick="window.location.href='index.php?c=Todos&m=index'">
           <i class="bi bi-house-door me-2"></i> Kembali ke Beranda
         </button>
       </div>

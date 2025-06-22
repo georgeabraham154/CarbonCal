@@ -2,7 +2,7 @@ const express = require ("express");
 const mysql = require ("mysql2/promise");
 
 const app = express();
-const port = 2003;
+const port = 3000;
 const router = express.Router();
 app.use(express.json());
 
@@ -16,17 +16,17 @@ app.use(express.json());
                     password: 'root',
                     database: 'carboncal'
             });
-        const food = req.body.food;
-        const berat = req.body.berat;
-        const sql = `SELECT food,calories,calories * ${berat} / 100 as calculated_calories, categorie FROM countcalorie WHERE food= '${food}' LIMIT 1`;
-        const [result] = await db.execute(sql);
-        console.log(result);
-        res.status(200).json(result[0]);
-        db.end();
-    } catch (error) {
-        res.status(407).json({error});
+            const food = req.body.food;
+            const berat = req.body.berat;
+            const sql = `SELECT food,calories,calories * ${berat} / 100 as calculated_calories, categorie FROM countcalorie WHERE food= '${food}' LIMIT 1`;
+            const [result] = await db.execute(sql);
+            console.log(result);
+            res.status(200).json(result[0]);
+            db.end();
+        } catch (error) {
+            res.status(407).json({error});
+        }
     }
-}
 const getFoodsSuggestion = async (req,res) =>{
     try {
         const db = await mysql.createConnection({

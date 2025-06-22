@@ -384,4 +384,9 @@
         });
     </script>
 </body>
+<footer class="bg-green text-white mt-5 py-4">
+    <div class="container text-center">
+        <p class="mb-2">© 2025 CarbonCal. Kelompok 7 Pemrograman Web.</p>
+    </div>
+</footer>
 </html>

@@ -29,6 +29,13 @@
         .menu-dropdown button:hover {
             background-color: #f0f0f0;
         }
+        footer {
+            background-color: #1a4d2e !important; /* Hijau tua */
+            color: #e6ffe6;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body class="bg-light">

@@ -238,9 +238,6 @@
         </div>
         </div>
     </main>
-
-    <?php @include "footer.php";?>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function toggleMenu() {
@@ -259,4 +256,9 @@
         });
     </script>
 </body>
+<footer class="bg-green text-white mt-5 py-4">
+    <div class="container text-center">
+        <p class="mb-2">© 2025 CarbonCal. Kelompok 7 Pemrograman Web.</p>
+    </div>
+</footer>
 </html>

@@ -140,6 +140,12 @@
             font-weight: 700;
             margin-bottom: 15px;
         }
+         footer {
+            background-color: #1a4d2e !important;
+            color: #e6ffe6;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9em;}
     </style>
     <script>
         function toggleMenu() {

@@ -127,7 +127,7 @@
 
     <footer>
         <div class="container">
-            <p class="mb-0">© 2025 CarbonCal. Kelompok 7 Pemrograman Web.</p>
+            <p class="mb-0" style="color: white;">© 2025 CarbonCal. Kelompok 7 Pemrograman Web.</p>
         </div>
     </footer>
 </body>

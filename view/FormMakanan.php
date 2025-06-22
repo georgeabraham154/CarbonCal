@@ -280,7 +280,7 @@ function getPlaceholder($kategori) {
         /* Mobile First Responsive Design */
         @media (max-width: 576px) {
             body {
-                padding: 0.5rem;
+                padding: 0rem;
             }
             
             .form-container {
@@ -620,4 +620,9 @@ function getPlaceholder($kategori) {
             });
     </script>
 </body>
+<footer class="bg-green text-white mt-5 py-4">
+    <div class="container text-center">
+        <p class="mb-2">© 2025 CarbonCal. Kelompok 7 Pemrograman Web.</p>
+    </div>
+</footer>
 </html>
