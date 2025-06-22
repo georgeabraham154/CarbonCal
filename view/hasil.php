@@ -160,21 +160,7 @@
     </style>
 </head>
 <body class="bg-light">
-  <nav class="navbar navbar-dark p-3 position-relative">
-    <div class="container-fluid d-flex justify-content-between align-items-center">
-      <div class="d-flex align-items-center gap-2">
-        <button class="btn btn-outline-light me-2" onclick="goBack()">←</button>
-        <a class="navbar-brand mb-0" href="#">CarbonCal</a>
-      </div>
-      <button class="btn btn-outline-light" onclick="toggleMenu()">☰</button>
-    </div>
-  </nav>
-
-    <div id="menuDropdown" class="menu-dropdown text-start">
-        <button class="btn" onclick="window.location.href='index.php?c=Todos&m=form'">🏠 Home</button>
-        <button class="btn" onclick="window.location.href='index.php?c=Todos&m=calories'">🔥 Calories Calculator</button>
-        <button class="btn" onclick="window.location.href='index.php?c=Todos&m=track'">🌍 Carbon Track</button>
-    </div>
+      <?php @include "header.php";?>
 
   <div class="container my-5">
     <div class="emission-result">

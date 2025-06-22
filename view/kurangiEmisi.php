@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kurangi Emisi</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kurangi Emisi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <?php @include "header.php";?>
   <style>
     .card {
       border-radius: 1rem;
@@ -47,12 +48,6 @@
 </head>
 
 <body class="bg-light">
-  <nav class="navbar  bg-green p-3 position-relative">
-    <div class="container-fluid d-flex justify-content-between">
-      <a class="navbar-brand" href="#">CarbonCal</a>
-      <button class="btn btn-outline-light" onclick="toggleMenu()">☰</button>
-    </div>
-  </nav>
 
   <div class="container py-4">
     <div class="text-center mb-4">

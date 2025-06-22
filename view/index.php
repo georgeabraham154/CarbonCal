@@ -137,8 +137,8 @@
     <!-- Dropdown Menu -->
     <div id="menuDropdown" class="menu-dropdown text-start">
         <button class="btn" onclick="window.location.href='index.php?c=Todos&m=form'">🏠 Home</button>
-        <button class="btn" onclick="window.location.href='index.php?c=Todos&m=calories'">🔥 Calories Calculator</button>
-        <button class="btn" onclick="window.location.href='index.php?c=Todos&m=track'">🌍 Carbon Track</button>
+        <button class="btn" onclick="window.location.href='index.php?c=Calories&m=index'">🔥 Calories Calculator</button>
+        <button class="btn" onclick="window.location.href='index.php?c=Todos&m=menu'">🌍 Carbon Track</button>
     </div>
 
     <main class="container mt-4">
@@ -166,7 +166,7 @@
                 <div class="card-body">
                     <h2 class="card-title">Calories Calculator</h2>
                     <p class="card-text">Gunakan kalkulator ini untuk memperkirakan jumlah kalori yang Anda konsumsi dan butuhkan berdasarkan aktivitas harian Anda.</p>
-                    <button class="btn btn-success" onclick="window.location.href='calories.html'">Hitung</button>
+                    <button class="btn btn-success" onclick="window.location.href='index.php?c=Calories&m=index'">Hitung</button>
                 </div>
             </div>
 
@@ -174,7 +174,7 @@
                 <div class="card-body">
                     <h2 class="card-title">Carbon Track</h2>
                     <p class="card-text">Lacak jejak karbon Anda dan pantau perubahan emisi karbon yang dihasilkan dari kebiasaan sehari-hari.</p>
-                    <button class="btn btn-warning" onclick="window.location.href='track.html'">Lihat</button>
+                    <button class="btn btn-warning" onclick="window.location.href='index.php?c=Todos&m=menu'">Lihat</button>
                 </div>
             </div>
         </div>

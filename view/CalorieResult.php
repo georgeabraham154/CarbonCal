@@ -245,6 +245,8 @@
     </style>
 </head>
 <body>
+        <?php @include "header.php";?>
+
     <div class="results-container">
         <div class="header">
             <span class="food-icon"></span>

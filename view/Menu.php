@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carbon Track Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Carbon Track Page</title>
+        <?php @include "header.php";?>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         
+        footer {
+            background-color: #1a4d2e !important;
+            color: #e6ffe6;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        
+        .menu-dropdown.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
         .container {
             max-width: 800px;
             margin: 50px auto;
@@ -41,12 +65,8 @@
     </style>
 </head>
 <body class="bg-light">
-    <nav class="navbar  bg-green p-3 position-relative">
-        <div class="container-fluid d-flex justify-content-between">
-            <a class="navbar-brand" href="#">CarbonCal</a>
-            <button class="btn btn-outline-light" onclick="toggleMenu()">☰</button>
-        </div>
-    </nav>
+    
+
     <div class="container py-4">
         <div class="text-center mb-3">
                 <h1 class="fw-bold">Carbon Track</h1>
@@ -92,6 +112,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 <footer class="bg-green text-white mt-5 py-4">
     <div class="container text-center">

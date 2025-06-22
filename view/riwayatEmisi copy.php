@@ -52,13 +52,7 @@
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar bg-green p-3 position-relative">
-    <div class="container-fluid d-flex justify-content-between">
-      <a class="navbar-brand" href="#">CarbonCal</a>
-      <button class="btn btn-outline-light">☰</button>
-    </div>
-  </nav>
+      <?php @include "header.php";?>
 
   <!-- Main content -->
   <main class="container py-5">

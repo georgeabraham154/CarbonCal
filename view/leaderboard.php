@@ -46,13 +46,7 @@
   </style>
 </head>
 <body class="bg-light">
-
-  <nav class="navbar bg-green p-3 position-relative">
-    <div class="container-fluid d-flex justify-content-between">
-      <a class="navbar-brand" href="#">CarbonCal</a>
-      <button class="btn btn-outline-light" onclick="toggleMenu()">☰</button>
-    </div>
-  </nav>
+    <?php @include "header.php";?>
 
   <div class="container py-5">
     <!-- Judul -->

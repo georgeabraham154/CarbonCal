@@ -500,6 +500,8 @@ function getPlaceholder($kategori) {
     </style>
 </head>
 <body>
+    <?php @include "header.php";?>
+
     <div class="container-fluid p-0">
         <div class="row justify-content-center min-vh-100 align-items-center">
             <div class="col-12 col-sm-11 col-md-10 col-lg-8 col-xl-6 col-xxl-5">
