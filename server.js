@@ -49,6 +49,51 @@ app.use((err, req, res, next) => {
     res.status(500).json({ success: false, message: 'Terjadi kesalahan server.' });
 });
 
+// GET leaderboard
+app.get('/leaderboard', async (req, res) => {
+  try {
+    const [rows] = await db.query('SELECT * FROM leaderboard');
+    res.json(rows);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// GET carbon-records
+app.get('/riwayat-emisi', async (req, res) => {
+  try {
+    const [rows] = await db.query('SELECT * FROM carbon_records');
+    res.json(rows);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// GET carbon-records totalemisi
+app.get('/carbon-records/total/:userId', async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    const [rows] = await db.query(
+      'SELECT total_emission FROM carbon_records WHERE user_id = ? ORDER BY id DESC LIMIT 1',
+      [userId]
+    );
+    res.json({ total_emission: rows[0]?.total_emission || 0 });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// DELETE riwayat emisi
+app.delete('/carbon-records/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+    await db.query('DELETE FROM carbon_records WHERE id = ?', [id]);
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // Mulai server Express
 app.listen(port, () => {
     console.log(`Server CarbonCal API berjalan di http://localhost:${port}`);
