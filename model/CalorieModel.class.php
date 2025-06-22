@@ -1,6 +1,6 @@
 <?php
     class CalorieModel extends Model{
-    function searchFoodsByCategory($query, $category){
+    function getFoodsSuggestion($query, $category){
         //fungsi ini dibuat nampilin suggestion
         $sql = "SELECT food, calories FROM countcalorie WHERE categorie = ? AND food LIKE ? LIMIT 10";
         $stmt = $this->db->prepare($sql);

@@ -33,7 +33,7 @@ class Calories extends Controller{
         ];
         $this->loadView('CalorieResult.php',$data);
     }
-     function searchFood(){
+    function searchFood(){
         header('Content-Type: application/json');
         
         $query = $_GET['q'] ?? '';
@@ -45,7 +45,7 @@ class Calories extends Controller{
         }
         
         $model = $this->loadModel('CalorieModel');
-        $suggestions = $model->searchFoodsByCategory($query, $kategori);
+        $suggestions = $model->getFoodsSuggestion($query, $kategori);
         echo json_encode($suggestions);
     }
 }

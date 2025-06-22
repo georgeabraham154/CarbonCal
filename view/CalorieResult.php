@@ -100,6 +100,7 @@
         .result-value {
             font-weight: 700;
             font-size: 1.2rem;
+            margin-right: 0;
             color: #2d3748;
         }
 
@@ -236,6 +237,10 @@
                 width: 100%;
                 justify-content: center;
             }
+
+            .result-value .result-label{
+                font-size: x-large;
+            }
         }
     </style>
 </head>
@@ -243,8 +248,8 @@
     <div class="results-container">
         <div class="header">
             <span class="food-icon"></span>
-            <h1 class="title">Nutrition Results</h1>
-            <p class="subtitle">Your calorie calculation summary</p>
+            <h1 class="title">Hasil Nutrisi</h1>
+            <p class="subtitle">ringkasan hasil kalkulasi kalori yang anda konsumsi</p>
         </div>
 
         <div class="progress-ring">
@@ -259,7 +264,7 @@
                 <circle class="progress" cx="60" cy="60" r="50"></circle>
             </svg>
             <div class="progress-text">
-                <span class="progress-number" id="totalCaloriesDisplay">425</span>
+                <span class="progress-number" id="totalCaloriesDisplay"><?php echo $total_calories?></span>
                 <span class="progress-label">calories</span>
             </div>
         </div>
@@ -270,7 +275,7 @@
                     <svg class="icon" viewBox="0 0 24 24">
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                     </svg>
-                    Food Item
+                    Nama makanan
                 </div>
                 <div class="result-value" id="foodName"><?php echo $food?></div>
             </div>
@@ -280,7 +285,7 @@
                     <svg class="icon" viewBox="0 0 24 24">
                         <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5 0 1.93-1.57 3.5-3.5 3.5s-3.5-1.57-3.5-3.5C8.5 7.57 10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/>
                     </svg>
-                    Calories per gram
+                    Kalori per gram
                 </div>
                 <div class="result-value" id="caloriesPerGram"><?php echo $calories." kal"?></div>
             </div>
@@ -290,7 +295,7 @@
                     <svg class="icon" viewBox="0 0 24 24">
                         <path d="M7 4V2C7 1.45 7.45 1 8 1S9 1.45 9 2V4H15V2C15 1.45 15.45 1 16 1S17 1.45 17 2V4H20C21.1 4 22 4.9 22 6V20C22 21.1 21.1 22 20 22H4C2.9 22 2 21.1 2 20V6C2 4.9 2.9 4 4 4H7ZM4 8V20H20V8H4Z"/>
                     </svg>
-                    Weight consumed
+                    Berat yang dikonsumsi
                 </div>
                 <div class="result-value" id="weight"><?php echo $berat ?></div>
             </div>
@@ -300,7 +305,7 @@
                     <svg class="icon" viewBox="0 0 24 24">
                         <path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/>
                     </svg>
-                    Total Energy
+                    Total energi
                 </div>
                 <div class="result-value" id="totalCalories"><?php echo $total_calories ?></div>
             </div>
