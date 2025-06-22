@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calorie Calculator Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -13,12 +14,12 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg,rgb(62, 120, 85) 0%,rgb(58, 132, 88) 100%);
             min-height: 100vh;
-            display: flex;
             align-items: center;
+            /* padding-top: 80px; */
             justify-content: center;
-            padding: 20px;
+            /* padding: 20px; */
         }
 
         .results-container {
@@ -73,7 +74,7 @@
         }
 
         .result-item {
-            background: linear-gradient(145deg, #f7fafc, #edf2f7);
+            background: linear-gradient(135deg,rgb(109, 175, 136) 0%,rgb(69, 204, 123) 100%);
             border-radius: 15px;
             padding: 20px;
             display: flex;
@@ -105,7 +106,7 @@
         }
 
         .total-calories {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            background: linear-gradient(135deg,#37905b 0%, #3a8458 100%);
             color: white;
             border: none;
             margin-top: 10px;
@@ -149,7 +150,7 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #3a8458 0%, #3e7855 100%);
             color: white;
         }
 
@@ -241,11 +242,12 @@
             .result-value .result-label{
                 font-size: x-large;
             }
+            
         }
     </style>
 </head>
+<?php @include "header.php";?>
 <body>
-        <?php @include "header.php";?>
 
     <div class="results-container">
         <div class="header">
@@ -258,8 +260,8 @@
             <svg>
                 <defs>
                     <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#4facfe"/>
-                        <stop offset="100%" style="stop-color:#00f2fe"/>
+                        <stop offset="0%" style="stop-color:#37905b"/>
+                        <stop offset="100%" style="stop-color:#3e7855"/>
                     </linearGradient>
                 </defs>
                 <circle class="bg" cx="60" cy="60" r="50"></circle>

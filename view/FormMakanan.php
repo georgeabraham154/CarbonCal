@@ -24,7 +24,7 @@ function getPlaceholder($kategori) {
     <script src="script.js"></script>
     <style>
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg,#3e7855 0%,#3a8458 100%);
             min-height: 100vh;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
@@ -86,7 +86,7 @@ function getPlaceholder($kategori) {
         .category-title {
             font-size: 2rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: #1a4d2e;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -123,7 +123,7 @@ function getPlaceholder($kategori) {
         }
         
         .form-control:focus {
-            border-color: #667eea;
+            border-color: #1a4d2e;
             box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
             background: white;
             transform: translateY(-1px);
@@ -134,9 +134,9 @@ function getPlaceholder($kategori) {
         }
         
         .input-group-text {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: #1a4d2e;
             color: white;
-            border: 2px solid #667eea;
+            border: 2px #1a4d2e;
             border-left: none;
             border-radius: 0 12px 12px 0;
             font-weight: 600;
@@ -172,7 +172,7 @@ function getPlaceholder($kategori) {
         
         .autocomplete-suggestion:hover,
         .autocomplete-suggestion.active {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: #1a4d2e;
             color: white;
         }
         
@@ -181,7 +181,7 @@ function getPlaceholder($kategori) {
         }
         
         .submit-btn {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: #1a4d2e;
             border: none;
             border-radius: 12px;
             padding: 1rem 2rem;
@@ -225,7 +225,7 @@ function getPlaceholder($kategori) {
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: #1a4d2e;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -512,7 +512,7 @@ function getPlaceholder($kategori) {
                             <i class="fas fa-utensils"></i>
                         </div>
                         <h1 class="category-title" id="kategori"><?php echo $kategori?> Tracker</h1>
-                        <p class="category-subtitle">Track your daily <?php echo $kategori?> intake</p>
+                        <p class="category-subtitle">Lacak asupan <?php echo $kategori?> harianmu</p>
                     </div>
                     
                     <form id="caloriesForm" action="?c=Calories&m=result" method="POST">
@@ -520,8 +520,8 @@ function getPlaceholder($kategori) {
                         <div class="form-group">
                             <label for="konsumsi" class="form-label">
                                 <i class="fas fa-search"></i>
-                                <span class="d-none d-sm-inline">What did you consume?</span>
-                                <span class="d-sm-none">Food item</span>
+                                <span class="d-none d-sm-inline">Apa yang anda konsumsi?</span>
+                                <span class="d-sm-none">Nama makanan</span>
                             </label>
                             <div class="autocomplete-container">
                                 <input name="konsumsi" type="text" class="form-control" 
@@ -534,24 +534,24 @@ function getPlaceholder($kategori) {
                         <div class="form-group">
                             <label for="berat" class="form-label">
                                 <i class="fas fa-weight"></i>
-                                <span class="d-none d-sm-inline">How much did you consume?</span>
-                                <span class="d-sm-none">Weight</span>
+                                <span class="d-none d-sm-inline">Berapa banyak yang anda konsumsi?</span>
+                                <span class="d-sm-none">Berat</span>
                             </label>
                             <div class="input-group">
                                 <input name="berat" type="number" class="form-control" 
                                        id="berat" min="1" step="1" placeholder="Enter weight..."
                                        required>
                                 <span class="input-group-text">
-                                    <span class="d-none d-sm-inline">grams</span>
+                                    <span class="d-none d-sm-inline">gram</span>
                                     <span class="d-sm-none">gr</span>
                                 </span>
                             </div>
-                            <div class="error-message" id="berat-error">Please enter a valid weight</div>
+                            <div class="error-message" id="berat-error">Masukkan berat yang valid</div>
                         </div>
                         <button type="submit" class="submit-btn">
                             <i class="fas fa-calculator me-2"></i>
-                            <span class="d-none d-sm-inline">Calculate Calories</span>
-                            <span class="d-sm-none">Calculate</span>
+                            <span class="d-none d-sm-inline">Kalkulasi Kalori</span>
+                            <span class="d-sm-none">Kalkulasi</span>
                         </button>
                     </form>
                 </div>

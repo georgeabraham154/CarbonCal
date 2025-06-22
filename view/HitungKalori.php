@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg,rgb(62, 120, 85) 0%,rgb(58, 132, 88) 100%);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -43,7 +43,7 @@
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: #1a4d2e;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -56,7 +56,7 @@
         .main-heading {
             font-size: 2.2rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: #1a4d2e;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -86,7 +86,7 @@
         
         .category-card:hover {
             transform: translateY(-8px);
-            border-color: #667eea;
+            border-color: #1a4d2e;
             box-shadow: 0 15px 35px rgba(102, 126, 234, 0.2);
             text-decoration: none;
             color: #2c3e50;
@@ -138,7 +138,7 @@
         
         .category-arrow {
             text-align: center;
-            color: #667eea;
+            color: #1a4d2e;
             font-size: 1.2rem;
             transition: transform 0.3s ease;
         }
