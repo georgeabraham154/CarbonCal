@@ -1,68 +1,81 @@
 <?php
 
+// Pastikan kelas Model dasar sudah dimuat
+require_once('Model.class.php'); // Atau cukup 'Model.class.php' jika sudah ada di path yang sama
+
 class TodoModel extends Model { // Mewarisi dari kelas Model
 
     // Fungsi untuk memasukkan data todo baru
     function insert($title) {
         $sql = "INSERT INTO todos (title) "
-        . "VALUES ('$title')";
-        $result = $this->db->query($sql); // Menjalankan query
-        return $result; // Mengembalikan hasil
+        . "VALUES (?)"; // Menggunakan placeholder untuk prepared statement
+        $stmt = $this->db->prepare($sql);
+        if ($stmt === false) {
+            error_log("Failed to prepare statement for TodoModel::insert: " . $this->db->error);
+            return false;
+        }
+        $stmt->bind_param("s", $title);
+        $result = $stmt->execute();
+        $stmt->close();
+        return $result;
     }
 
     // Fungsi untuk mendapatkan semua data todo
     function getAllTodos() {
         $sql = "SELECT * FROM todos";
         $result = $this->db->query($sql);
-        return $result->fetch_all(MYSQLI_ASSOC); // Mengembalikan semua baris sebagai array asosiatif
+        if ($result === false) {
+            error_log("Failed to execute query for TodoModel::getAllTodos: " . $this->db->error);
+            return [];
+        }
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
     // Fungsi untuk mendapatkan satu todo berdasarkan ID
     function getTodo($id) {
-        $sql = "SELECT * FROM todos WHERE id = '$id'";
-        $result = $this->db->query($sql);
-        $rows = $result->fetch_all(MYSQLI_ASSOC);
-        return $rows[0]; // Mengembalikan baris pertama
+        $sql = "SELECT * FROM todos WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+        if ($stmt === false) {
+            error_log("Failed to prepare statement for TodoModel::getTodo: " . $this->db->error);
+            return null;
+        }
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        $stmt->close();
+        return $row;
     }
 
     // Fungsi untuk memperbarui data todo
     function update($title, $id) {
-        $sql = "UPDATE todos SET title = '$title' "
-         . "WHERE id = '$id'";
-        return $this->db->query($sql);
+        $sql = "UPDATE todos SET title = ? WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+        if ($stmt === false) {
+            error_log("Failed to prepare statement for TodoModel::update: " . $this->db->error);
+            return false;
+        }
+        $stmt->bind_param("si", $title, $id);
+        $result = $stmt->execute();
+        $stmt->close();
+        return $result;
     }
 
     // Fungsi untuk menghapus data todo
     function delete($id) {
-        $sql = "DELETE FROM todos WHERE id = '$id'";
-        return $this->db->query($sql);
-    }
-
-    function getLeaderboard(){
-        $sql = "SELECT * FROM leaderboard";
-        $result = $this->db->query($sql);
-        return $result->fetch_all(MYSQLI_ASSOC);
-    }
-
-    function getriwayatEmisi(){
-        $sql = "SELECT * FROM carbon_records";
-        $result = $this->db->query($sql);
-        return $result->fetch_all(MYSQLI_ASSOC);
-    }
-
-    function getTotalEmissionForUserId($userId) {
-        $sql = "SELECT total_emission FROM carbon_records WHERE user_id = ? ORDER BY id DESC LIMIT 1";
+        $sql = "DELETE FROM todos WHERE id = ?";
         $stmt = $this->db->prepare($sql);
-        $stmt->bind_param("i", $userId);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        return $result->fetch_assoc()['total_emission'] ?? 0;
+        if ($stmt === false) {
+            error_log("Failed to prepare statement for TodoModel::delete: " . $this->db->error);
+            return false;
+        }
+        $stmt->bind_param("i", $id);
+        $result = $stmt->execute();
+        $stmt->close();
+        return $result;
     }
 
-    public function hapusEmisiById($id) {
-    $stmt = $this->db->prepare("DELETE FROM carbon_records WHERE id = ?");
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    $stmt->close();
-    }
+    // *** FUNGSI TERKAIT KARBON DIHAPUS DARI SINI ***
+    // getLeaderboard(), getriwayatEmisi(), getTotalEmissionForUserId()
+    // Semua fungsi ini sudah dipindahkan ke CarbonModel.class.php
 }
